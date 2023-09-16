@@ -1,15 +1,13 @@
 import { StatusBar } from 'react';
 import { Button,StyleSheet, Text, View, TextInput } from 'react-native';
-import Form from './Form';
-//import Sign from './Sign';
-//import Forgot from './Forgot';
+import Sign from './Sign';
 
 export default function App() {
 
   return (
     <View style={styles.container}>
   
-    <Form/>
+    <Sign/>
 
 
     
@@ -26,4 +24,3 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   }
 });
-

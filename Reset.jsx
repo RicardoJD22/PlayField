@@ -5,7 +5,6 @@ const Form = () => {
   const inputAccessoryViewID = 'uniqueID';
   const initialText = '';
   const [text, setText] = useState(initialText);
-  const [email, setEmail] = useState(initialText);
   const [password, setPassword] = useState(initialText);
   const [error, setError] = useState('');
 
@@ -17,7 +16,6 @@ const Form = () => {
     setError('');
     return true;
   };
-
 
 
   const inputStyles = {
@@ -43,7 +41,7 @@ const Form = () => {
 
 <View style={buttonContainerStyles}>
 <Text style={{ textAlign: 'center', fontSize:30, marginTop: 10, color: 'white' }}>
-         Login
+         Cambiar contraseña
         </Text>
  
 
@@ -62,17 +60,16 @@ const Form = () => {
           }}
           inputAccessoryViewID={inputAccessoryViewID}
           onChangeText={setText}
-          value={email}
-          placeholder={'Correo electrónico'}
+          value={password}
+          placeholder={'Nueva contraseña'}
         />
 
         <TextInput
-           style={inputStyles}
-           inputAccessoryViewID={inputAccessoryViewID}
-           onChangeText={setPassword}
-           value={password}
-           placeholder={'Contraseña'}
-           secureTextEntry={true}
+          style={inputStyles}
+          inputAccessoryViewID={inputAccessoryViewID}
+          onChangeText={setText}
+          value={password}
+          placeholder={'Confirmar contraseña'}
         />
 
 
@@ -85,15 +82,11 @@ const Form = () => {
               // Realiza la acción de inicio de sesión aquí
             }
           }}
-          title="Iniciar sesión"
+          title="Reset"
         />
          </View>
-         <Text style={{ textAlign: 'center', marginTop: 10, color: 'red' }}>{error}</Text>
 
-{/* Agregar un texto debajo del botón */}
-<Text style={{ textAlign: 'center', marginTop: 10, color: 'white' }}>
-          ¿Olvidaste tu contraseña?
-        </Text>
+         <Text style={{ textAlign: 'center', marginTop: 10, color: 'red' }}>{error}</Text>
 
       </ScrollView>
       <InputAccessoryView nativeID={inputAccessoryViewID}>

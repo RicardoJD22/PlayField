@@ -9,6 +9,7 @@ const Form = () => {
   const [password, setPassword] = useState(initialText);
   const [error, setError] = useState('');
 
+
   const isPasswordValid = () => {
     if (password.length < 8) {
       setError('La contraseña debe tener al menos 8 caracteres');
@@ -17,8 +18,6 @@ const Form = () => {
     setError('');
     return true;
   };
-
-
 
   const inputStyles = {
     padding: 16,
@@ -43,7 +42,7 @@ const Form = () => {
 
 <View style={buttonContainerStyles}>
 <Text style={{ textAlign: 'center', fontSize:30, marginTop: 10, color: 'white' }}>
-         Login
+         Crear Cuenta
         </Text>
  
 
@@ -54,11 +53,24 @@ const Form = () => {
   source={require('./Logo.png')} // Reemplaza 'tu_imagen.png' con la ruta de tu imagen
   style={{ width: 140, height: 140, alignSelf: 'center', marginTop: 50 }}
 />
+
+
       <ScrollView keyboardDismissMode="interactive">
+      <TextInput
+          style={{
+            ...inputStyles,
+            marginTop: 10, 
+          }}
+          inputAccessoryViewID={inputAccessoryViewID}
+          onChangeText={setText}
+          value={text}
+          placeholder={'Nombre de usuario'}
+        />
+        
         <TextInput
           style={{
             ...inputStyles,
-            marginTop: 100, 
+            marginTop: 20, 
           }}
           inputAccessoryViewID={inputAccessoryViewID}
           onChangeText={setText}
@@ -67,12 +79,11 @@ const Form = () => {
         />
 
         <TextInput
-           style={inputStyles}
-           inputAccessoryViewID={inputAccessoryViewID}
-           onChangeText={setPassword}
-           value={password}
-           placeholder={'Contraseña'}
-           secureTextEntry={true}
+          style={inputStyles}
+          inputAccessoryViewID={inputAccessoryViewID}
+          onChangeText={setText}
+          value={password}
+          placeholder={'Contraseña'}
         />
 
 
@@ -81,18 +92,16 @@ const Form = () => {
           
           
           onPress={() => {
-            if (isPasswordValid()) {
-              // Realiza la acción de inicio de sesión aquí
-            }
+           
           }}
-          title="Iniciar sesión"
+          title="Crear cuenta"
         />
          </View>
          <Text style={{ textAlign: 'center', marginTop: 10, color: 'red' }}>{error}</Text>
 
 {/* Agregar un texto debajo del botón */}
 <Text style={{ textAlign: 'center', marginTop: 10, color: 'white' }}>
-          ¿Olvidaste tu contraseña?
+          O iniciar sesión
         </Text>
 
       </ScrollView>

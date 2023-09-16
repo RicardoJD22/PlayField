@@ -5,20 +5,6 @@ const Form = () => {
   const inputAccessoryViewID = 'uniqueID';
   const initialText = '';
   const [text, setText] = useState(initialText);
-  const [email, setEmail] = useState(initialText);
-  const [password, setPassword] = useState(initialText);
-  const [error, setError] = useState('');
-
-  const isPasswordValid = () => {
-    if (password.length < 8) {
-      setError('La contraseña debe tener al menos 8 caracteres');
-      return false;
-    }
-    setError('');
-    return true;
-  };
-
-
 
   const inputStyles = {
     padding: 16,
@@ -43,7 +29,7 @@ const Form = () => {
 
 <View style={buttonContainerStyles}>
 <Text style={{ textAlign: 'center', fontSize:30, marginTop: 10, color: 'white' }}>
-         Login
+         Recuperar contraseña
         </Text>
  
 
@@ -63,17 +49,10 @@ const Form = () => {
           inputAccessoryViewID={inputAccessoryViewID}
           onChangeText={setText}
           value={email}
-          placeholder={'Correo electrónico'}
+          placeholder={'Correo electronico'}
         />
 
-        <TextInput
-           style={inputStyles}
-           inputAccessoryViewID={inputAccessoryViewID}
-           onChangeText={setPassword}
-           value={password}
-           placeholder={'Contraseña'}
-           secureTextEntry={true}
-        />
+       
 
 
 <View style={buttonContainerStyles}>
@@ -81,18 +60,14 @@ const Form = () => {
           
           
           onPress={() => {
-            if (isPasswordValid()) {
-              // Realiza la acción de inicio de sesión aquí
-            }
+           
           }}
-          title="Iniciar sesión"
+          title="Enviar"
         />
          </View>
-         <Text style={{ textAlign: 'center', marginTop: 10, color: 'red' }}>{error}</Text>
 
-{/* Agregar un texto debajo del botón */}
-<Text style={{ textAlign: 'center', marginTop: 10, color: 'white' }}>
-          ¿Olvidaste tu contraseña?
+         <Text style={{ textAlign: 'center', fontSize:30, marginTop: 10, color: 'white' }}>
+         Iniciar sesión
         </Text>
 
       </ScrollView>

@@ -1,7 +1,7 @@
 import { StatusBar } from 'react';
 import { Button,StyleSheet, Text, View, TextInput } from 'react-native';
-import Form from './Form';
-//import Sign from './Sign';
+//import Form from './Form';
+import Sign from './Sign';
 //import Forgot from './Forgot';
 
 export default function App() {
@@ -9,7 +9,7 @@ export default function App() {
   return (
     <View style={styles.container}>
   
-    <Form/>
+    <Sign/>
 
 
     

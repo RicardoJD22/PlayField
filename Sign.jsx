@@ -3,10 +3,9 @@ import {Image, Button, InputAccessoryView, ScrollView,Text, TextInput, View } fr
 
 const Form = () => {
   const inputAccessoryViewID = 'uniqueID';
-  const initialText = '';
-  const [text, setText] = useState(initialText);
-  const [email, setEmail] = useState(initialText);
-  const [password, setPassword] = useState(initialText);
+  const [text, setText] = useState('');
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
   const [error, setError] = useState('');
 
 
@@ -50,7 +49,7 @@ const Form = () => {
 </View>
 
 <Image
-  source={require('./Logo.png')} // Reemplaza 'tu_imagen.png' con la ruta de tu imagen
+  source={require('./Logo.png')} 
   style={{ width: 140, height: 140, alignSelf: 'center', marginTop: 50 }}
 />
 
